@@ -1,6 +1,8 @@
 #lang at-exp s-exp "dept.rkt"
 
-;; XXX UML CS Teaching Award since 2013
+;; Based on https://teaching.cs.uml.edu/~heines/academic/department/
+
+;; XXX UML CS Teaching Award 2014 2015 2016
 
 @prof{
   @n{Thomas Costello}
@@ -30,6 +32,11 @@
   @year[2007]
 
   @year[2008]
+
+  @year[2009]
+
+  @year[2010]
+  @out-of-dept
   
   @year[2016]
   @emeritus}
@@ -65,6 +72,27 @@
 
   @year[2008]
   @gradcom['chair]
+
+  @year[2009]
+  @gradcom[2011]
+  @opscom[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @gradcom[2013]
+
+  @year[2012]
+  @opscom[2014]
+  @coord-colloq[2013]
+
+  @year[2013]
+
+  @year[2014]
+  @opscom[2016]
+
+  @year[2015]
+  @end
   
   @year[2016]
   @emeritus}
@@ -105,6 +133,14 @@
   @coord-grad
   @coord-grad-ms
   @college-grad
+
+  @year[2009]
+
+  @year[2010]
+  @gradcom['chair]
+
+  @year[2011]
+  @out-of-dept
   
   @year[2016]
   @emeritus}
@@ -140,7 +176,28 @@
   @year[2007]
 
   @year[2008]
-  @senate[2009]}
+  @senate[2009]
+
+  @year[2009]
+  @senate[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @senate[2012]
+
+  @year[2012]
+  @senate[2014]
+
+  @year[2013]
+
+  @year[2014]
+
+  @year[2015]
+
+  @year[2016]
+  @gradcom[2018]
+  @opscom[2018]}
 
 @prof{
   @n{James Canning}
@@ -179,10 +236,27 @@
 
   @year[2008]
   @opscom[2010]
+
+  @year[2009]
+  @ugradcom[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @title{Director, University Honors Program}
+  @ugradcom[2013]
+
+  @year[2012]
+
+  @year[2013]
+  @ugradcom[2015]
+  @senate[2015]
+
+  @year[2014]
+  @outside
   
   @year[2016]
-  @title{Dean, University Honors Program}
-  @outside}
+  @title{Dean, University Honors Program}}
 
 @prof{
   @n{Jesse Heines}
@@ -227,6 +301,26 @@
 
   @year[2009]
   @full
+
+  @year[2010]
+  @coord-ugrad
+
+  @year[2011]
+  @sabbatical['fall]
+
+  @year[2012]
+  @ugradcom[2014]
+
+  @year[2013]
+  @acm-advisor
+  @student-advisory-board
+
+  @year[2014]
+  @ugradcom[2016]
+  @newsletter[2015]
+
+  @year[2015]
+  @acm-advisor
   
   @year[2016]
   @retired}
@@ -255,9 +349,27 @@
   @ugradcom[2009]
 
   @year[2008]
+
+  @year[2009]
+  @ugradcom[2011]
+
+  @year[2010]
+  @ugradcom['chair]
+
+  @year[2011]
+  @coord-ugrad
+
+  @year[2012]
+
+  @year[2013]
+  @coord-ugrad
   
   @year[2014]
-  @assoc-chair}
+  @assoc-chair
+
+  @year[2015]
+
+  @year[2016]}
 
 @prof{
   @n{Haim Levkowitz}
@@ -291,7 +403,32 @@
 
   @year[2008]
   @senate[2009]
-  @acm-adivsor
+  @acm-advisor
+
+  @year[2009]
+  @gradcom[2011]
+  @senate[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @title{Undeclared Science Advisor, College of Sciences}
+  @gradcom[2013]
+  @senate[2012]
+
+  @year[2012]
+  @sabbatical
+
+  @year[2013]
+  @assoc-chair
+  @opscom[2015]
+  @senate[2015]
+
+  @year[2014]
+  @coord-navitas
+
+  @year[2015]
+  @senate[2017]
   
   @year[2016]
   @chair}
@@ -332,11 +469,32 @@
   @award-teaching
   @opscom['chair]
 
+  @year[2009]
+  @ugradcom[2011]
+  @opscom[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @ugradcom['chair]
+  @ugradcom[2013]
+  @opscom[2013]
+
   @year[2012]
   @award-teaching
+
+  @year[2013]
+  @ugradcom[2015]
+  @opscom[2015]
   
   @year[2014]
-  @coord-msit}
+  @coord-msit
+
+  @year[2015]
+  @ugradcom[2017]
+  @opscom[2017]
+
+  @year[2016]}
 
 @prof{
   @n{Cindy Chen}
@@ -368,9 +526,31 @@
 
   @year[2009]
   @assoc
+  @senate[2011]
+  @newsletter[2010]
+
+  @year[2010]
+  @newsletter[2011]
+
+  @year[2011]
+  @coord-grad['fall]
+  @sabbatical['spring]
+
+  @year[2012]
+  @coord-grad
+  @gradcom['chair]
+
+  @year[2013]
+  @gradcom['chair]
 
   @year[2014]
-  @coord-grad}
+  @coord-grad
+  @gradcom['chair]
+
+  @year[2015]
+
+  @year[2016]
+  @gradcom['chair]}
 
 @prof{
   @n{Guanling Chen}
@@ -387,7 +567,30 @@
 
   @year[2008]
   @gradcom[2010]
-  @newsletter[2009]}
+  @newsletter[2009]
+
+  @year[2009]
+
+  @year[2010]
+  @coord-colloq[2011]
+
+  @year[2011]
+  @assoc
+  @opscom[2013]
+
+  @year[2012]
+
+  @year[2013]
+  @senate[2015]
+
+  @year[2014]
+  @opscom[2016]
+
+  @year[2015]
+  @senate[2017]
+
+  @year[2016]
+  @advisor-acm}
 
 @prof{
   @n{Kajal Claypool}
@@ -461,6 +664,24 @@
   
   @year[2009]
   @award-teaching
+
+  @year[2010]
+  @gradcom[2012]
+
+  @year[2011]
+  @opscom[2013]
+
+  @year[2012]
+
+  @year[2013]
+  @gradcom[2015]
+  @opscom[2015]
+  @gso-advisor
+
+  @year[2014]
+
+  @year[2015]
+  @leave
   
   @year[2016]
   @retired}
@@ -502,8 +723,33 @@
   @year[2008]
   @gradcom[2010]
 
+  @year[2009]
+  @coord-colloq[2011]
+
+  @year[2010]
+  @assoc
+  @gradcom[2012]
+
   @year[2011]
-  @award-teaching}
+  @award-teaching
+  @coord-grad['spring]
+  @sabbatical['fall]
+
+  @year[2012]
+  @gradcom[2014]
+  @senate[2014]
+
+  @year[2013]
+
+  @year[2014]
+  @opscom[2016]
+  @senate[2016]
+
+  @year[2015]
+
+  @year[2016]
+  @opscom[2018]
+  @full}
 
 @prof{
   @n{Gary Livingston}
@@ -581,9 +827,34 @@
   @assoc
   @ugradcom[2010]
   @coord-colloq[2009]
-  
+
+  @year[2009]
+  @assoc-chair
+
+  @year[2010]
+  @ugradcom[2012]
+  @opscom['chair]
+
+  @year[2011]
+  @title{Associate Dean, College of Sciences}
+
+  @year[2012]
+  @title{Director of Student Success, College of Sciences}
+  @ugradcom[2014]
+  @newsletter[2013]
+
+  @year[2013]
+  @newsletter[2014]
+
+  @year[2014]
+  @ugradcom[2016]
+
+  @year[2015]
+  @full
+
   @year[2016]
-  @title{Director of Student Success, College of Sciences}}
+  @ugradcom[2018]
+  }
 
 @prof{
   @n{Li Xu}
@@ -641,8 +912,33 @@
 
   @year[2008]
   @sabbatical
+
+  @year[2009]
+  @opscom[2011]
+  @senate[2011]
+
+  @year[2010]
+
+  @year[2011]
+  @full
+  @assoc-chair
+  @senate[2012]
+
+  @year[2012]
+  @gradcom[2014]
+  @opscom[2014]
+
+  @year[2013]
+
+  @year[2014]
+  @gradcom[2016]
+
+  @year[2015]
+  @sabbatical['spring]
+  @adviser-robotics
   
   @year[2016]
+  @gradcom[2018]
   @title{Director, NERVE Center}}
 
 @prof{
@@ -822,41 +1118,147 @@
   @assistant
   @ugradcom[2010]
 
+  @year[2009]
+
   @year[2010]
-  @award-teaching}
+  @award-teaching
+  @ugradcom[2012]
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  @year[2011]
+  @gradcom[2013]
+  @coord-colloq[2012]
 
-@prof{@n{David Adams}
-  @area{Scientific Computing}
-  @area{CS Education}
-  @e{dbadams}
+  @year[2012]
+  @assoc
+  @assoc-chair
+  @senate[2014]
 
   @year[2013]
-  @award-teaching
-  
+  @gradcom[2015]
+
   @year[2014]
-  @coord-ugrad}
+  @sabbatical
+
+  @year[2015]
+  @senate[2017]
+
+  @year[2016]
+  @coord-colloq[2017]}
 
 @prof{
   @n{Tingjian Ge}
   @area{Data Management Systems}
   @e{ge}
 
-  @year[2013]
-  @award-teaching}
+  @year[2011]
+  @assistant
 
-@prof{
-  @n{Ayat Hatem}
-  @area{Biological Networks Analysis}
-  @area{Big Data}
-  @area{Sequence Mapping}
-  @e{ahatem}
+  @year[2012]
+  @opscom[2014]
+
+  @year[2013]
+  @award-teaching
+  @coord-colloq[2014]
+
+  @year[2014]
+  @gradcom[2016]
 
   @year[2015]
-  @ntt
+  @assoc
 
   @year[2016]
+  @gradcom[2018]
+  @opscom[2018]}
+
+@prof{
+  @n{Anna Rumshisky}
+  @area{Natural Language Processing}
+  @e{arum}
+
+  @year[2012]
+  @assistant
+
+  @year[2013]
+  @gradcom[2015]
+
+  @year[2014]
+
+  @year[2015]
+  @gradcom[2017]
+
+  @year[2016]}
+
+@prof{
+  @n{Kate Saenko}
+  @area{Computer Vision}
+  @area{Machine Learning}
+  @e{saenko}
+
+  @year[2012]
+  @assistant
+
+  @year[2013]
+  @gradcom[2015]
+
+  @year[2014]
+
+  @year[2015]
+  @gradcom[2017]
+  
+  @year[2016]
+  @end}
+
+@lecturer{
+  @n{David Adams}
+  @area{Scientific Computing}
+  @area{CS Education}
+  @e{dbadams}
+
+  @year[2013]
+  @award-teaching
+  @ugradcom[2015]
+  
+  @year[2014]
+  @coord-ugrad
+  @ugradcom['chair]
+
+  @year[2015]
+
+  @year[2016]}
+
+@lecturer{
+  @n{Sarita Bassil}
+  @e{sbassil}
+
+  @year[2011]
+
+  @year[2012]
+  @ugradcom[2014]
+  @senate[2014]
+
+  @year[2013]
+  @end
+
+  @year[2016]
+  @adjunct{Computing I}}
+
+@lecturer{
+  @n{Mark Sheldon}
+  @e{msheldon}
+
+  @year[2011]
+  @ugradcom[2013]
+
+  @year[2012]
+  @end}
+
+@lecturer{
+  @n{Anne Mulhern}
+  @e{mulhern}
+
+  @year[2012]
+
+  @year[2013]
   @end}
 
 @prof{
@@ -864,7 +1266,56 @@
   @area{Big Data}
   @area{Computational Intelligence}
   @area{Multimedia Computing}
-  @e{ycao}}
+  @e{ycao}
+
+  @year[2013]
+  @ugradcom[2015]
+
+  @year[2014]
+  @coord-colloq
+
+  @year[2015]
+  @gradcom[2017]
+  @coord-colloq[2016]
+
+  @year[2016]}
+
+@lecturer{
+  @n{Olga Lepsky}
+  @e{olepsky}
+
+  @year[2013]
+  @ugradcom[2015]
+
+  @year[2014]
+
+  @year[2015]
+  @end}
+
+@lecturer{
+  @n{Ayat Hatem}
+  @area{Biological Networks Analysis}
+  @area{Big Data}
+  @area{Sequence Mapping}
+  @e{ahatem}
+
+  @year[2015]
+  @coord-bsit
+  @ugradcom[2017]
+
+  @year[2016]
+  @end}
+
+@lecturer{
+  @n{Sirong Lin}
+  @e{slin}
+
+  @year[2015]
+  @coord-ugrad['assistant]
+  @ugradcom[2017]
+
+  @year[2016]
+  }
 
 @prof{
   @n{Jay McCarthy}
@@ -872,27 +1323,58 @@
   @area{Formal Verification}
   @area{CS Education}
   @e{jmccarth}
+
+  @year[2015]
+  @assoc
+  @opscom[2017]
+  @newsletter[2016]
+  
   @year[2016]
-  @coord-navitas}
+  @coord-navitas
+  @newsletter[2017]
+  @senate[2018]
+  @ugradcom[2018]}
 
 @prof{
-  @n{Anna Rumshisky}
-  @area{Natural Language Processing}
-  @e{arum}}
+  @n{Wenjin Zhou}
+  @e{wzhou}
 
-@prof{
-  @n{Kate Saenko}
-  @area{Computer Vision}
-  @area{Machine Learning}
-  @e{saenko}
   @year[2016]
-  @end}
+  @assistant
+}
 
-@adjunct{
+@lecturer{
+  @n{Yelena Rykalova}
+  @e{yrykalov}
+
+  @year[2016]
+  @coord-bsit
+  @ugradcom[2018]
+}
+
+@lecturer{
+  @n{Krishnan Seetharaman}
+
+  @year[2016]
+  @adjunct{Foundations}}
+
+@lecturer{
   @n{David Hendrickson}
   @area{Computer Architecture}
   @area{Assembly Language}
-  @e{dhendric}}
+  @e{dhendric}
+
+  @year[2016]
+  @adjunct{Computer Architecture}}
+
+@lecturer{
+  @n{Terence Watterson}
+
+  @year[2016]
+  @adjunct{Exploring the Internet}}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 @staff{
   @n{Phyllis Procter}
