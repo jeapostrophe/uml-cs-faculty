@@ -2,7 +2,7 @@
 
 ;; Based on https://teaching.cs.uml.edu/~heines/academic/department/
 
-;; XXX UML CS Teaching Award 2014 2015 2016
+;; Emailed faculty about UML CS Teaching Award 2014 2015
 
 @prof{
   @n{Thomas Costello}
@@ -312,7 +312,7 @@
   @ugradcom[2014]
 
   @year[2013]
-  @acm-advisor
+  @advisor-acm
   @student-advisory-board
 
   @year[2014]
@@ -320,7 +320,7 @@
   @newsletter[2015]
 
   @year[2015]
-  @acm-advisor
+  @advisor-acm
   
   @year[2016]
   @retired}
@@ -403,7 +403,7 @@
 
   @year[2008]
   @senate[2009]
-  @acm-advisor
+  @advisor-acm
 
   @year[2009]
   @gradcom[2011]
@@ -676,7 +676,7 @@
   @year[2013]
   @gradcom[2015]
   @opscom[2015]
-  @gso-advisor
+  @advisor-gso
 
   @year[2014]
 
@@ -935,7 +935,7 @@
 
   @year[2015]
   @sabbatical['spring]
-  @adviser-robotics
+  @advisor-robotics
   
   @year[2016]
   @gradcom[2018]
@@ -982,7 +982,7 @@
   @year[2001]
   @deceased}
 
-@adjucnt{
+@adjunct{
   @n{Adrien Grisé}
   @e{agrise}
 
@@ -1240,7 +1240,8 @@
   @end
 
   @year[2016]
-  @adjunct{Computing I}}
+  @sort-group['adjunct]
+  @adjunct-class{Computing I}}
 
 @lecturer{
   @n{Mark Sheldon}
@@ -1272,7 +1273,7 @@
   @ugradcom[2015]
 
   @year[2014]
-  @coord-colloq
+  @coord-colloq[2016]
 
   @year[2015]
   @gradcom[2017]
@@ -1352,26 +1353,26 @@
   @ugradcom[2018]
 }
 
-@lecturer{
+@adjunct{
   @n{Krishnan Seetharaman}
 
   @year[2016]
-  @adjunct{Foundations}}
+  @adjunct-class{Foundations}}
 
-@lecturer{
+@adjunct{
   @n{David Hendrickson}
   @area{Computer Architecture}
   @area{Assembly Language}
   @e{dhendric}
 
   @year[2016]
-  @adjunct{Computer Architecture}}
+  @adjunct-class{Computer Architecture}}
 
-@lecturer{
+@adjunct{
   @n{Terence Watterson}
 
   @year[2016]
-  @adjunct{Exploring the Internet}}
+  @adjunct-class{Exploring the Internet}}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1380,16 +1381,25 @@
   @n{Phyllis Procter}
   @prefix{Ms.}
   @title{Community Partnerships @"\n" Program Manager}
-  @e{pprocter}}
+  @e{pprocter}
+
+  @; When is the real start?
+  @year[2015]}
 
 @staff{
   @n{Karen Volis}
   @prefix{Ms.}
   @title{Administrative Assisant}
-  @e{dept}}
+  @e{dept}
+  
+  @; When is the real start?
+  @year[2015]}
 
 @staff{
   @n{Tuyen Nguyen}
   @prefix{Mr.}
   @title{Systems Manager}
-  @e{tuyen}}
+  @e{tuyen}
+
+  @; When is the real start?
+  @year[2015]}
