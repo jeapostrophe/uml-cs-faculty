@@ -110,33 +110,80 @@
   (define m (hash-ref k->merger k (λ () default-merger)))
   (m d y k kc))
 
+(define (filter-past pid->pd the-pid c)
+  (match-define (data k kc) c)
+  (match k
+    ;; There can be only one!
+    [(or 'chair 'assoc-chair
+         'coord-grad 'coord-ugrad 'coord-msit 'coord-navitas)
+     (for/fold ([pid->pd pid->pd])
+               ([(pid pd) (in-hash pid->pd)]
+                #:unless (equal? pid the-pid))
+       (hash-set pid->pd pid
+                 (hash-remove pd k)))]
+    [x
+     #;(eprintf "no filter for ~a ~a\n" k kc)
+     pid->pd]))
+
 (define (process-ps ps)
-  (define y->pds (make-hasheq))
+  ;; ps is organized as a list of people with embedded year commands
 
-  (for ([p (in-list ps)])
-    (define (save-cy! d cy)
-      (unless (zero? cy)
-        (hash-update! y->pds cy
-                      (λ (old) (cons d old))
-                      empty)))
-    (define-values (ld lcy)
-      (for/fold ([d (hash)]
-                 [cy 0])
-                ([c (in-list (person-info-content p))])
-        (match c
-          [(data 'year (? number? ny))
-           (save-cy! d cy)
-           (values d ny)]
-          ["\n"
-           (values d cy)]
-          [_
-           (values (gather d cy c) cy)])))
-    (when (zero? lcy)
-      (error 'process-ps "No date for ~e" p))
+  ;; We need to turn it into a list of years so we can filter
+  (define y->pid->cs
+    (for/fold ([last-y->pid->cs (hasheq)])
+              ([p (in-list ps)]
+               [pid (in-naturals)])
 
-    (save-cy! ld lcy))
+      (define-values (next-y->pid->cs last-cy)
+        (for/fold ([last-y->pid->cs last-y->pid->cs] [cy 0])
+                  ([c (in-list (person-info-content p))])
+          (match c
+            [(data 'year (? number? ny))
+             (values last-y->pid->cs ny)]
+            ["\n"
+             (values last-y->pid->cs cy)]
+            [_
+             (values
+              (hash-update last-y->pid->cs cy
+                           (λ (ht)
+                             (hash-update ht
+                                          pid
+                                          (λ (old) (cons c old))
+                                          empty))
+                           (λ () (hasheq)))
+              cy)])))
+      
+      next-y->pid->cs))
 
-  y->pds)
+  ;; Then we turn the list of years into a year to list of person data
+  (define-values (y->pid->pd _)
+    (for/fold ([last-y->pid->pd (hasheq)]
+               [last-pid->pd (hasheq)])
+              ([y (in-list (sort (hash-keys y->pid->cs) <=))])
+
+      (define pid->cs (hash-ref y->pid->cs y))
+
+      (define filtered-pid->pd
+        (for*/fold ([last-pid->pd last-pid->pd])
+                   ([(pid cs) (in-hash pid->cs)]
+                    [c (in-list cs)])
+          (filter-past last-pid->pd pid c)))
+
+      (define next-pid->pd
+        (for/fold ([next-pid->pd filtered-pid->pd])
+                  ([(pid cs) (in-hash pid->cs)])
+          (hash-update next-pid->pd pid
+                       (λ (this-pd)
+                         (for/fold ([this-pd this-pd])
+                                   ([c (in-list cs)])
+                           (gather this-pd y c)))
+                       (λ () (hasheq)))))
+
+      (values (hash-set last-y->pid->pd y next-pid->pd)
+              next-pid->pd)))
+
+  (for/hasheq ([(y pid->pd) (in-hash (hash-remove y->pid->pd 0))])
+    (values y (hash-values pid->pd))))
 
 ;; Compiler
 (require racket/runtime-path)
@@ -196,14 +243,82 @@
    `(pre
      ,(pretty-format people%y))))
 
-;; XXX two to a page, landscape
 (define (build-board! people%y)
-  (eprintf "build-board! XXX ~e\n" people%y))
+  (define (extract t)
+    (define (matches-t? p)
+      (match t
+        [(? symbol? k)
+         (hash-has-key? p k)]
+        [(cons k v)
+         (equal? v (hash-ref p k #f))]))
+    (filter matches-t? people%y))
+  (define (extract1 t)
+    (match (extract t)
+      [(list x) x]
+      [x (error 'extract1 "not 1 thing for ~e: ~e" t x)]))
+
+  (define gc (extract1 'coord-grad))
+  (define ac (extract1 'assoc-chair))
+  (define ch (extract1 'chair))
+  (define cc (extract1 'coord-ugrad))
+  (define mi (extract1 'coord-msit))
+  (define nv (extract1 'coord-navitas))
+  (define (except-offices l)
+    (for/fold ([l l]) ([i (in-list (list gc ac ch cc mi nv))])
+      (remove i l)))
+  
+  (define fac (except-offices (extract (cons 'sort-group 'faculty))))
+  (define st (except-offices (extract (cons 'sort-group 'staff))))
+  (define adj (except-offices (extract (cons 'sort-group 'adjunct))))
+  (define out (except-offices (extract (cons 'sort-group 'outside))))
+
+  (define (N pd)
+    (hash-ref pd 'n))
+  
+  ;; XXX two to a page, landscape
+  (eprintf "XXX build-board!\n")
+  (pretty-print (vector (N gc) (N ac) (N ch) (N cc) (N mi) (N nv)
+                        (map N fac) (map N st) (map N adj) (map N out)))
+  (eprintf "XXX build-board! PDF\n")
+  (eprintf "XXX build-board! HTML\n"))
+
+(define (build-faces! people%y)
+  (output!
+   "faces.html"
+   "UMass Lowell CS > Faces"
+   `(div ([class "menu"])
+         (ul
+          (li (a ([href "index.html"]) "Top"))))
+   "XXX"
+   `(pre
+     ,(pretty-format people%y))))
+
+(define (build-offices! people%y)
+  (output!
+   "offices.html"
+   "UMass Lowell CS > Offices"
+   `(div ([class "menu"])
+         (ul
+          (li (a ([href "index.html"]) "Top"))))
+   "XXX"
+   `(pre
+     ,(pretty-format people%y))))
+
+(define (build-research! people%y)
+  (output!
+   "research.html"
+   "UMass Lowell CS > Research"
+   `(div ([class "menu"])
+         (ul
+          (li (a ([href "index.html"]) "Top"))))
+   "XXX"
+   `(pre
+     ,(pretty-format people%y))))
 
 (define (build-extras! y people%y)
-  ;; XXX faces
-  ;; XXX offices
-  ;; XXX research
+  (build-faces! people%y)
+  (build-offices! people%y)
+  (build-research! people%y)
   (build-board! people%y))
 
 (define (build-index! all-years cay)
@@ -227,6 +342,7 @@
   (for ([y (in-list all-years)]
         [py (in-list (cons #f all-years))]
         [ny (in-list (snoc (rest all-years) #f))])
+    (printf "Building year ~a\n" y)
     (define people%y (hash-ref year->people y))
     (build-directory! py y ny people%y)
     (when (= y cay)
