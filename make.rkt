@@ -92,7 +92,7 @@
   @opscom[2016]
 
   @year[2015]
-  @end
+  @out-of-dept
   
   @year[2016]
   @emeritus}
@@ -253,7 +253,7 @@
   @senate[2015]
 
   @year[2014]
-  @outside
+  @out-of-dept
   
   @year[2016]
   @title{Dean, University Honors Program}}
@@ -323,7 +323,7 @@
   @advisor-acm
   
   @year[2016]
-  @retired}
+  @out-of-dept}
 
 @prof{
   @n{Byung-Guk Kim}
@@ -684,7 +684,7 @@
   @leave
   
   @year[2016]
-  @retired}
+  @out-of-dept}
 
 @prof{
   @n{Allyn Dimock}
@@ -947,6 +947,7 @@
   
   @year[2002]
   @emeritus
+  @out-of-dept
 
   @year[2006]}
 
@@ -966,6 +967,7 @@
 
   @year[2003]
   @emeritus
+  @out-of-dept
 
   @year[2004]
   @coord-grad-admissions
@@ -980,6 +982,7 @@
   @award-teaching
   
   @year[2001]
+  @out-of-dept
   @deceased}
 
 @adjunct{
@@ -1066,7 +1069,7 @@
   @opscom[2002]
 
   @year[2002]
-  @retired}
+  @out-of-dept}
 
 @prof{
   @n{Pat Krolak}
@@ -1077,7 +1080,7 @@
   @ugradcom[2002]
 
   @year[2002]
-  @retired
+  @out-of-dept
 
   @year[2006]
   @emeritus}
@@ -1099,6 +1102,7 @@
   @coord-ugrad
 
   @year[2005]
+  @out-of-dept
   @deceased}
 
 @prof{
@@ -1106,7 +1110,8 @@
   @e{stu}
 
   @year[2006]
-  @emeritus}
+  @emeritus
+  @out-of-dept}
 
 @prof{
   @n{Xinwen Fu}
@@ -1240,6 +1245,7 @@
   @end
 
   @year[2016]
+  @prefix{Adjunct Prof.}
   @sort-group['adjunct]
   @adjunct-class{Computing I}}
 
@@ -1312,7 +1318,7 @@
   @e{slin}
 
   @year[2015]
-  @coord-ugrad['assistant]
+  @coord-ugrad-asst
   @ugradcom[2017]
 
   @year[2016]

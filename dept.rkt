@@ -45,14 +45,22 @@
 (define (e x) (email (format "~a@cs.uml.edu" x)))
 (provide e)
 
+
+(define&provide assoc (data 'rank 'assoc))
+(define&provide assistant (data 'rank 'assistant))
+(define&provide full (data 'rank 'full))
+
+(define&provide out-of-dept (data 'sort-group 'out-of-dept))
+
+(define&provide end (data 'sort-group 'end))
+
 (struct status data () #:transparent)
 (define-syntax-rule (define-status kind)
   (define&provide kind (status 'kind #f)))
 (repeat define-status
-        assoc assistant full
-        retired emeritus outside deceased
-        sabbatical out-of-dept leave award-teaching
-        start end)
+        deceased emeritus
+        sabbatical leave award-teaching
+        start)
 
 (struct position data () #:transparent)
 (define-syntax-rule (define-position kind)
@@ -60,6 +68,7 @@
 (repeat define-position
         chair assoc-chair
         coord-ugrad coord-msit coord-grad
+        coord-ugrad-asst
         coord-navitas coord-bsit coord-grad-ms
         college-personnel college-grad
         student-advisory-board college-ugrad
@@ -99,8 +108,13 @@
 (define (snoc l x)
   (append l (list x)))
 
+(define list-merger
+  (λ (d y k kc)
+     (hash-update d k (λ (okc) (cons kc okc)) empty)))
+
 (define k->merger
-  (hasheq))
+  (hasheq
+   'area list-merger))
 
 (define (default-merger d y k kc)
   (hash-set d k kc))
@@ -152,7 +166,7 @@
                                           empty))
                            (λ () (hasheq)))
               cy)])))
-      
+
       next-y->pid->cs))
 
   ;; Then we turn the list of years into a year to list of person data
@@ -186,7 +200,8 @@
     (values y (hash-values pid->pd))))
 
 ;; Compiler
-(require racket/runtime-path)
+(require racket/runtime-path
+         racket/string)
 
 (define (current-academic-year)
   (local-require racket/date)
@@ -264,23 +279,75 @@
   (define mi (extract1 'coord-msit))
   (define nv (extract1 'coord-navitas))
   (define (except-offices l)
-    (for/fold ([l l]) ([i (in-list (list gc ac ch cc mi nv))])
-      (remove i l)))
-  
+    (sort
+     (for/fold ([l l]) ([i (in-list (list gc ac ch cc mi nv))])
+       (remove i l))
+     string<=?
+     #:key (λ (pd) (second (string-split (hash-ref pd 'n))))))
+
   (define fac (except-offices (extract (cons 'sort-group 'faculty))))
   (define st (except-offices (extract (cons 'sort-group 'staff))))
   (define adj (except-offices (extract (cons 'sort-group 'adjunct))))
-  (define out (except-offices (extract (cons 'sort-group 'outside))))
+  (define out (except-offices (extract (cons 'sort-group 'out-of-dept))))
 
-  (define (N pd)
-    (hash-ref pd 'n))
-  
   ;; XXX two to a page, landscape
-  (eprintf "XXX build-board!\n")
-  (pretty-print (vector (N gc) (N ac) (N ch) (N cc) (N mi) (N nv)
-                        (map N fac) (map N st) (map N adj) (map N out)))
   (eprintf "XXX build-board! PDF\n")
-  (eprintf "XXX build-board! HTML\n"))
+
+  (define (board-html pd)
+    (define (has k t)
+      (and (hash-has-key? pd k) t))
+    (define name (hash-ref pd 'n))
+    `(div ([class "entry"])
+          (img ([src ,(format "img/~a.jpg" name)]))
+          (span ([class "name"])
+                ,(hash-ref pd 'prefix) nbsp ,name)
+          ,(let* ([t
+                   (or (has 'coord-grad "Graduate Coordinator")
+                       (has 'coord-ugrad "Undergraduate Coordinator")
+                       (has 'coord-ugrad-asst "Assistant Undergraduate Coordinator")
+                       (has 'assoc-chair "Associate Chair")
+                       (has 'chair "Chair")
+                       (has 'coord-msit "MS in IT Coordinator")
+                       (has 'coord-bsit "BS in IT Coordinator")
+                       (has 'coord-navitas "Navitas Coordinator")
+                       (hash-ref pd 'title #f))])
+             (if t
+               `(span ([class "title"]) ,t)
+               ""))
+          ,(let ([as (hash-ref pd 'area #f)])
+             (if as
+               `(span ([class "research"])
+                    ,@(for/list ([a (in-list as)])
+                        `(span ,a)))
+               ""))))
+
+  (output!
+   "board.html"
+   "UMass Lowell CS > Board"
+   `(div ([class "menu"])
+         (ul
+          (li (a ([href "index.html"]) "Top"))))
+   `(div ([class "board"])
+         (span ([class "label"]) "Administration")
+         (div ([class "group"])
+              ,(board-html ch)
+              ,(board-html ac)
+              ,(board-html gc)
+              ,(board-html cc)
+              ,(board-html mi)
+              ,(board-html nv))
+         (span ([class "label"]) "Faculty")
+         (div ([class "group"])
+              ,@(map board-html fac))
+         (span ([class "label"]) "Staff")
+         (div ([class "group"])
+              ,@(map board-html st))
+         (span ([class "label"]) "Adjuncts")
+         (div ([class "group"])
+              ,@(map board-html adj))
+         (span ([class "label"]) "Outside of Department")
+         (div ([class "group"])
+              ,@(map board-html out)))))
 
 (define (build-faces! people%y)
   (output!
@@ -348,3 +415,7 @@
     (when (= y cay)
       (build-extras! y people%y)))
   (build-index! all-years cay))
+
+;; XXX Board on 2nd floor
+;; XXX Face dir on 1st and 3rd
+;; XXX Office dir on 2nd

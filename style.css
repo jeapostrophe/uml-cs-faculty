@@ -1,0 +1,39 @@
+div.board span.label {
+}
+
+div.board div.group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div.board div.group div.entry {
+    width: 250px;
+    height: 300px;
+
+    text-align: center;
+}
+
+div.board div.group div.entry img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+div.board div.group div.entry span.name {
+    display: block;
+}
+
+div.board div.group div.entry span.title {
+    display: block;
+}
+
+div.board div.group div.entry span.research {
+    margin-top: 1em;
+    display: block;
+}
+
+div.board div.group div.entry span.research span {
+    display: block;
+}
