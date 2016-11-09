@@ -110,7 +110,7 @@
 
 (define list-merger
   (λ (d y k kc)
-     (hash-update d k (λ (okc) (cons kc okc)) empty)))
+    (hash-update d k (λ (okc) (cons kc okc)) empty)))
 
 (define k->merger
   (hasheq
@@ -293,33 +293,78 @@
   ;; XXX two to a page, landscape
   (eprintf "XXX build-board! PDF\n")
 
-  (define (board-html pd)
+  (define (board-info pd)
     (define (has k t)
       (and (hash-has-key? pd k) t))
     (define name (hash-ref pd 'n))
+    (values (hash-ref pd 'prefix)
+            name
+            (format "img/~a.jpg" name)
+            (or (has 'coord-grad "Graduate Coordinator")
+                (has 'coord-ugrad "Undergraduate Coordinator")
+                (has 'coord-ugrad-asst "Assistant Undergraduate Coordinator")
+                (has 'assoc-chair "Associate Chair")
+                (has 'chair "Chair")
+                (has 'coord-msit "MS in IT Coordinator")
+                (has 'coord-bsit "BS in IT Coordinator")
+                (has 'coord-navitas "Navitas Coordinator")
+                (hash-ref pd 'title #f))
+            (hash-ref pd 'area #f)
+            (hash-ref pd 'email "")))
+
+  (define (board-html pd)
+    (define-values (prefix name img t as em)
+      (board-info pd))
     `(div ([class "entry"])
-          (img ([src ,(format "img/~a.jpg" name)]))
+          (img ([src ,img]))
           (span ([class "name"])
-                ,(hash-ref pd 'prefix) nbsp ,name)
-          ,(let* ([t
-                   (or (has 'coord-grad "Graduate Coordinator")
-                       (has 'coord-ugrad "Undergraduate Coordinator")
-                       (has 'coord-ugrad-asst "Assistant Undergraduate Coordinator")
-                       (has 'assoc-chair "Associate Chair")
-                       (has 'chair "Chair")
-                       (has 'coord-msit "MS in IT Coordinator")
-                       (has 'coord-bsit "BS in IT Coordinator")
-                       (has 'coord-navitas "Navitas Coordinator")
-                       (hash-ref pd 'title #f))])
-             (if t
-               `(span ([class "title"]) ,t)
-               ""))
-          ,(let ([as (hash-ref pd 'area #f)])
-             (if as
-               `(span ([class "research"])
+                ,prefix nbsp ,name)
+          ,(if t
+             `(span ([class "title"]) ,t)
+             "")
+          ,(if as
+             `(span ([class "research"])
                     ,@(for/list ([a (in-list as)])
                         `(span ,a)))
-               ""))))
+             "")))
+
+  (define (latex! p . content)
+    (local-require racket/file)
+    (make-directory* build)
+    (with-output-to-file
+      (build-path build p)
+      #:exists 'replace
+      (λ ()
+        (let loop ([c content])
+          (cond
+            [(pair? c)
+             (loop (car c))
+             (loop (cdr c))]
+            [(string? c)
+             (displayln c)])))))
+
+  (define (board-tex pd)
+    (define-values (prefix name img t as em)
+      (board-info pd))
+    (if (file-exists? img)
+      (format "\\BoardEntry{~a}{~a}{~a}{~a}{~a}{~a}"
+              prefix name img (or t "")
+              (string-join (or as empty) ", ")
+              em)
+      ""))
+
+  (latex!
+   "board-content.tex"
+   (list (board-tex ch)
+         (board-tex ac)
+         (board-tex gc)
+         (board-tex cc)
+         (board-tex mi)
+         (board-tex nv))
+   (map board-tex fac)
+   (map board-tex st)
+   (map board-tex adj)
+   (map board-tex out))
 
   (output!
    "board.html"

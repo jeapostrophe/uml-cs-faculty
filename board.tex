@@ -1,0 +1,30 @@
+\documentclass[landscape, letterpaper, twocolumn]{article}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{color}
+\usepackage[table]{xcolor}
+
+\definecolor{cs-blue}{RGB}{2,12,128}
+\definecolor{cs-green}{RGB}{205,253,52}
+
+\pagestyle{empty}
+
+\setlength{\columnseprule}{0.4pt}
+
+\newcommand{\BoardEntry}[6]{
+  \begin{center}
+    \color{cs-blue}
+    \includegraphics[height=6.5in, width=6.5in, keepaspectratio]{#3} \\
+    \huge
+    \textbf{#1 #2} \\
+    \Large
+    \textbf{#4}~ \\
+    \large
+    #5~ \\
+    #6~
+  \end{center} \newpage}
+
+\begin{document}
+\input{build/board-content}
+\end{document}
