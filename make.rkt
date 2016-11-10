@@ -36,6 +36,7 @@
   @year[2009]
 
   @year[2010]
+  @title
   @out-of-dept
   
   @year[2016]
@@ -633,6 +634,7 @@
 @prof{
   @n{Karen Daniels}
   @area{Applied Computational Geometry}
+  @area{Visualization}
   @e{kdaniels}
   @assistant
   
@@ -684,6 +686,7 @@
   @leave
   
   @year[2016]
+  @emeritus
   @out-of-dept}
 
 @prof{
@@ -704,7 +707,10 @@
 
 @prof{
   @n{Ben Liu}
-  @area{Computer Networking}
+  @area{Computer Networks}
+  @area{Mobile Computing}
+  @area{Applied Data Mining}
+  @area{Machine Learning}
   @e{bliu}
 
   @year[2003]
@@ -882,8 +888,7 @@
 
 @prof{
   @n{Holly Yanco}
-  @area{Robotics}
-  @area{Assitive Technology}  
+  @area{Human Robot Interaction}
   @e{holly}
   @assistant
   
@@ -949,7 +954,11 @@
   @emeritus
   @out-of-dept
 
-  @year[2006]}
+  @year[2006]
+
+  @; When?
+  @year[2016]
+  @deceased}
 
 @prof{
   @n{Marian Williams}
@@ -982,7 +991,6 @@
   @award-teaching
   
   @year[2001]
-  @out-of-dept
   @deceased}
 
 @adjunct{
@@ -1069,7 +1077,11 @@
   @opscom[2002]
 
   @year[2002]
-  @out-of-dept}
+  @out-of-dept
+
+  @; When?
+  @year[2016]
+  @deceased}
 
 @prof{
   @n{Pat Krolak}
@@ -1083,7 +1095,11 @@
   @out-of-dept
 
   @year[2006]
-  @emeritus}
+  @emeritus
+
+  @; When?
+  @year[2016]
+  @deceased}
 
 @prof{
   @n{John Sieg}
@@ -1102,7 +1118,6 @@
   @coord-ugrad
 
   @year[2005]
-  @out-of-dept
   @deceased}
 
 @prof{
@@ -1153,6 +1168,7 @@
 @prof{
   @n{Tingjian Ge}
   @area{Data Management Systems}
+  @area{Big Data Analytics}
   @e{ge}
 
   @year[2011]
@@ -1178,6 +1194,7 @@
 @prof{
   @n{Anna Rumshisky}
   @area{Natural Language Processing}
+  @area{Machine Learning}
   @e{arum}
 
   @year[2012]

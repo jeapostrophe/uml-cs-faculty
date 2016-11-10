@@ -51,14 +51,14 @@
 (define&provide full (data 'rank 'full))
 
 (define&provide out-of-dept (data 'sort-group 'out-of-dept))
-
+(define&provide deceased (data 'sort-group 'deceased))
 (define&provide end (data 'sort-group 'end))
 
 (struct status data () #:transparent)
 (define-syntax-rule (define-status kind)
   (define&provide kind (status 'kind #f)))
 (repeat define-status
-        deceased emeritus
+        emeritus
         sabbatical leave award-teaching
         start)
 
@@ -310,7 +310,8 @@
                 (has 'coord-navitas "Navitas Coordinator")
                 (hash-ref pd 'title #f))
             (hash-ref pd 'area #f)
-            (hash-ref pd 'email "")))
+            (and (not (eq? 'out-of-dept (hash-ref pd 'sort-group)))
+                 (hash-ref pd 'email #f))))
 
   (define (board-html pd)
     (define-values (prefix name img t as em)
@@ -350,7 +351,7 @@
       (format "\\BoardEntry{~a}{~a}{~a}{~a}{~a}{~a}"
               prefix name img (or t "")
               (string-join (or as empty) ", ")
-              em)
+              (or em ""))
       ""))
 
   (latex!
@@ -364,6 +365,7 @@
    (map board-tex fac)
    (map board-tex st)
    (map board-tex adj)
+   ;; XXX Annotate these in some way
    (map board-tex out))
 
   (output!

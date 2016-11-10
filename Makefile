@@ -9,3 +9,8 @@ build/board.pdf: build/board-content.tex
 
 build/board-content.tex build: dept.rkt make.rkt
 	racket make.rkt
+
+clean:
+	rm -f build/board.pdf
+
+remake: clean all
