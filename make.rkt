@@ -4,6 +4,9 @@
 
 ;; Emailed faculty about UML CS Teaching Award 2014 2015
 
+;; Note all retired faculty are emeritus, they have to ask for it, but
+;; it is almost always approved.
+
 @prof{
   @n{Thomas Costello}
   @area{Computing Theory}
@@ -324,11 +327,13 @@
   @advisor-acm
   
   @year[2016]
+  @emeritus
   @out-of-dept}
 
 @prof{
-  @n{Byung-Guk Kim}
-  @area{High Speed Networking}
+  @n{Byung Kim}
+  @area{Bioinformatics}
+  @area{Computer Networking}
   @e{kim}
   @assoc
   
@@ -706,7 +711,7 @@
   @end}
 
 @prof{
-  @n{Ben Liu}
+  @n{Benyuan Liu}
   @area{Computer Networks}
   @area{Mobile Computing}
   @area{Applied Data Mining}
