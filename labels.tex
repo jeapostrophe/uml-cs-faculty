@@ -1,0 +1,59 @@
+\documentclass[landscape, letterpaper, twocolumn]{article}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{color}
+\usepackage[table]{xcolor}
+
+\definecolor{cs-blue}{RGB}{2,12,128}
+\definecolor{cs-green}{RGB}{205,253,52}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.arrows}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\def\myLeftArrow{\smash{%
+    \begin{tikzpicture}
+      \node[single arrow,draw=black,fill=cs-blue,minimum height=6cm,shape border rotate=180] at (0,-1) {};
+    \end{tikzpicture}
+}}
+\def\myRightArrow{\smash{%
+    \begin{tikzpicture}
+      \node[single arrow,draw=black,fill=cs-blue,minimum height=6cm,shape border rotate=0] at (0,-1) {};
+    \end{tikzpicture}
+}}
+
+\pagestyle{empty}
+
+\setlength{\columnseprule}{0.4pt}
+
+\begin{document}
+
+\color{cs-blue}
+\fontsize{2.5cm}{3.0cm}\selectfont
+
+\begin{center}
+  {\color{white} Adjunct}
+  Professors \\
+  \hspace{0.2em} \myLeftArrow
+
+  \vspace{2.2em}
+
+  Staff \\
+  \hspace{0.2em} \myRightArrow
+\end{center}
+
+\newpage
+
+\begin{center}
+  Adjunct Professors \\
+  \hspace{0.2em} \myLeftArrow
+
+  \vspace{1em}
+
+  Emeritus Professors \\
+  \hspace{0.2em} \myRightArrow
+\end{center}
+
+\end{document}

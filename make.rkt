@@ -7,6 +7,8 @@
 ;; Note all retired faculty are emeritus, they have to ask for it, but
 ;; it is almost always approved.
 
+;; XXX make the font for the area and email bigger
+
 @prof{
   @n{Thomas Costello}
   @area{Computing Theory}
@@ -1338,6 +1340,9 @@
 @lecturer{
   @n{Sirong Lin}
   @e{slin}
+  @area{Computer-Supported Cooperative Work}
+  @area{Collaborative Learning}
+  @area{CS Education}
 
   @year[2015]
   @coord-ugrad-asst
