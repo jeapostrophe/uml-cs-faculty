@@ -510,10 +510,8 @@
   @area{XML}
   @e{cchen}
   
-  @year[2002]
-  @assistant
-
   @year[2003]
+  @assistant
   @opscom[2005]
 
   @year[2004]
@@ -562,7 +560,9 @@
 
 @prof{
   @n{Guanling Chen}
-  @area{Wireless Networks}
+  @area{Mobile Computing}
+  @area{Recommendation Systems}
+  @area{Big Data}
   @e{glchen}
 
   @year[2005]
@@ -951,7 +951,11 @@
   
   @year[2016]
   @gradcom[2018]
-  @title{Director, NERVE Center}}
+  @title{Director, NERVE Center}
+
+  @year[2017]
+  @senate[2019]
+}
 
 @prof{
   @n{Bob Lechner}
@@ -1373,8 +1377,15 @@
   @n{Wenjin Zhou}
   @e{wzhou}
 
+  @area{Biomedical Data Science}
+  @area{Interactive Visualization}
+  @area{Computational Intelligence}
+  
   @year[2016]
   @assistant
+
+  @year[2017]
+  @senate[2019]
 }
 
 @lecturer{
