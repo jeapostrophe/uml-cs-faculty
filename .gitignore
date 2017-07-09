@@ -1,3 +1,4 @@
-/board.aux
-/board.log
+/*.aux
+/*.log
 /build
+/*.pdf

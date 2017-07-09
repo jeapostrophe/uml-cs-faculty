@@ -40,11 +40,10 @@
   (define&provide kind (data 'kind #f)))
 (repeat define-data
         area n title prefix year sort-group email
-        adjunct-class)
+        adjunct-class adhoc)
 
 (define (e x) (email (format "~a@cs.uml.edu" x)))
 (provide e)
-
 
 (define&provide assoc (data 'rank 'assoc))
 (define&provide assistant (data 'rank 'assistant))
@@ -243,8 +242,8 @@
 
 (require racket/pretty)
 (define (build-directory! py y ny people%y)
-  ;; XXX Commitee page (like
-  ;; https://teaching.cs.uml.edu/~heines/academic/department/Committees2014.jsp)
+  ;; XXX Commitee page
+  ;; https://teaching.cs.uml.edu/~heines/academic/department/Committees2014.jsp
 
   (output!
    (format "~a.html" y)
@@ -289,9 +288,6 @@
   (define st (except-offices (extract (cons 'sort-group 'staff))))
   (define adj (except-offices (extract (cons 'sort-group 'adjunct))))
   (define out (except-offices (extract (cons 'sort-group 'out-of-dept))))
-
-  ;; XXX two to a page, landscape
-  (eprintf "XXX build-board! PDF\n")
 
   (define (board-info pd)
     (define (has k t)
@@ -365,7 +361,6 @@
    (map board-tex fac)
    (map board-tex st)
    (map board-tex adj)
-   ;; XXX Annotate these in some way
    (map board-tex out))
 
   (output!
@@ -463,6 +458,5 @@
       (build-extras! y people%y)))
   (build-index! all-years cay))
 
-;; XXX Board on 2nd floor
 ;; XXX Face dir on 1st and 3rd
 ;; XXX Office dir on 2nd

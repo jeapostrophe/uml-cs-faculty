@@ -7,8 +7,14 @@ build/board.pdf: build/board-content.tex
 	pdflatex board.tex
 	mv -f board.pdf $@
 
-build/board-content.tex build: dept.rkt make.rkt
+build/board-content.tex build: dept.rkt make.rkt build/img build/style.css
 	racket make.rkt
+
+build/img: img
+	ln -sf ../img $@
+
+build/style.css: style.css
+	cp -f $^ $@
 
 labels.pdf: labels.tex
 	pdflatex labels.tex
