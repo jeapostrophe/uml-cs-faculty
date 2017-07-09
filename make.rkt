@@ -203,7 +203,11 @@
 
   @year[2016]
   @gradcom[2018]
-  @opscom[2018]}
+  @opscom[2018]
+
+  @year[2017]
+  @adhoc{KCS Space Committee}
+}
 
 @prof{
   @n{James Canning}
@@ -1371,7 +1375,10 @@
   @coord-navitas
   @newsletter[2017]
   @senate[2018]
-  @ugradcom[2018]}
+  @ugradcom[2018]
+
+  @year[2017]
+  @opscom['chair]}
 
 @prof{
   @n{Wenjin Zhou}
