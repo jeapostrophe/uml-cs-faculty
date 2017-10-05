@@ -899,7 +899,7 @@
 
 @prof{
   @n{Holly Yanco}
-  @area{Human Robot Interaction}
+  @area{Human-Robot Interaction}
   @e{holly}
   @assistant
   
@@ -955,7 +955,7 @@
   
   @year[2016]
   @gradcom[2018]
-  @title{Director, NERVE Center}
+  @title{University Professor @"\\\\" Director, NERVE Center}
 
   @year[2017]
   @senate[2019]
@@ -1424,6 +1424,38 @@
 
   @year[2016]
   @adjunct-class{Exploring the Internet}}
+
+@prof{
+  @n{Matteo Cimini}
+  @email{Matteo@"\\_"Cimini@"@"uml.edu}
+
+  @area{Programming Languages}
+  @area{Formal Methods}
+  
+  @year[2017]
+  @assistant
+}
+
+@prof{
+  @n{Yongfeng Zhang}
+  @e{yzchang3}
+
+  @area{Information Retrieval}
+  @area{Personalization}
+  @area{Economic Data Science}
+  
+  @year[2017]
+  @assistant
+}
+
+;; 5 9 10
+
+@lecturer{
+  @n{Charles Wilkes}
+  @e{twilkes}
+  
+  @year[2016]}
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
