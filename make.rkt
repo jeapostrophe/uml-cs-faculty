@@ -1451,8 +1451,8 @@
 ;; 5 9 10
 
 @lecturer{
-  @n{Charles Wilkes}
-  @e{twilkes}
+  @n{Charles (Tom) Wilkes}
+  @email{Charles@"\\_"Wilkes@"@"uml.edu}
   
   @year[2016]}
 

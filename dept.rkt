@@ -343,12 +343,15 @@
   (define (board-tex pd)
     (define-values (prefix name img t as em)
       (board-info pd))
-    (if (file-exists? img)
-      (format "\\BoardEntry{~a}{~a}{~a}{~a}{~a}{~a}"
-              prefix name img (or t "")
-              (string-join (or as empty) ", ")
-              (or em ""))
-      ""))
+    (define r
+      (if (file-exists? img)
+        (format "\\BoardEntry{~a}{~a}{~a}{~a}{~a}{~a}"
+                prefix name img (or t "")
+                (string-join (or as empty) ", ")
+                (or em ""))
+        ""))
+    (eprintf "~a\n" r)
+    r)
 
   (latex!
    "board-content.tex"
