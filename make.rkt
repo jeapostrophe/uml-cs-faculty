@@ -506,7 +506,11 @@
   @ugradcom[2017]
   @opscom[2017]
 
-  @year[2016]}
+  @year[2016]
+
+  @year[2017]
+  @opscom[2019]
+  @ugradcom[2019]}
 
 @prof{
   @n{Cindy Chen}
@@ -602,7 +606,10 @@
   @senate[2017]
 
   @year[2016]
-  @advisor-acm}
+  @advisor-acm
+
+  @year[2017]
+  @opscom[2019]}
 
 @prof{
   @n{Kajal Claypool}
@@ -1223,7 +1230,10 @@
   @year[2015]
   @gradcom[2017]
 
-  @year[2016]}
+  @year[2016]
+
+  @year[2017]
+  @gradcom[2019]}
 
 @prof{
   @n{Kate Saenko}
@@ -1317,7 +1327,10 @@
   @gradcom[2017]
   @coord-colloq[2016]
 
-  @year[2016]}
+  @year[2016]
+
+  @year[2017]
+  @coord-colloq[2018]}
 
 @lecturer{
   @n{Olga Lepsky}
@@ -1393,6 +1406,7 @@
 
   @year[2017]
   @senate[2019]
+  @gradcom[2019]
 }
 
 @lecturer{
@@ -1434,6 +1448,7 @@
   
   @year[2017]
   @assistant
+  @senate[2019]
 }
 
 @prof{
@@ -1446,6 +1461,7 @@
   
   @year[2017]
   @assistant
+  @senate[2019]
 }
 
 ;; 5 9 10
@@ -1454,7 +1470,15 @@
   @n{Charles (Tom) Wilkes}
   @email{Charles@"\\_"Wilkes@"@"uml.edu}
   
-  @year[2016]}
+  @year[2017]
+  @ugradcom[2019]}
+
+@lecturer{
+  @n{Jonathan Mwaura}
+  @email{Jonathan@"\\_"Mwaura"@"uml.edu}
+  
+  @year[2017]
+  @ugradcom[2019]}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
