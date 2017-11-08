@@ -1475,7 +1475,7 @@
 
 @lecturer{
   @n{Jonathan Mwaura}
-  @email{Jonathan@"\\_"Mwaura"@"uml.edu}
+  @email{Jonathan@"\\_"Mwaura@"@"uml.edu}
   
   @year[2017]
   @ugradcom[2019]}
