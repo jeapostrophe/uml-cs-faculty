@@ -1462,6 +1462,21 @@
   @year[2017]
   @assistant
   @senate[2019]
+
+  @year[2018]
+  @out-of-dept
+  }
+
+@prof{
+  @n{Hong Yu}
+  @email{Hong@"\\_"Yu@"@"uml.edu}
+
+  @area{Digital Health}
+  @area{Biomedical Natural Language Processing}
+  @area{Big Data Analytics}
+  
+  @year[2018]
+  @full
 }
 
 ;; 5 9 10
