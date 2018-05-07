@@ -2,7 +2,7 @@
 
 ;; Based on https://teaching.cs.uml.edu/~heines/academic/department/
 
-;; Emailed faculty about UML CS Teaching Award 2014 2015
+;; Emailed faculty about UML CS Teaching Award 2014 2015 2016
 
 ;; Note all retired faculty are emeritus, they have to ask for it, but
 ;; it is almost always approved.
@@ -1370,6 +1370,9 @@
   @ugradcom[2017]
 
   @year[2016]
+
+  @year[2017]
+  @award-teaching
   }
 
 @prof{
